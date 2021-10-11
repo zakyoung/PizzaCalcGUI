@@ -35,8 +35,6 @@ public class PizzaGUI extends JFrame{
     ButtonLn3.addActionListener(handler);
     super.add(finalLabel); 
     super.setLayout(new GridLayout(4,1,5,5));    
-    super.setSize(350,300);    
-    super.setVisible(true);    
 }
 private class ButtonHandler implements ActionListener{
   @Override
@@ -47,6 +45,9 @@ private class ButtonHandler implements ActionListener{
   }
 }
 public static void main(String[] args) {    
-    new PizzaGUI();    
+    PizzaGUI PizzaCalc = new PizzaGUI();
+    PizzaCalc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    PizzaCalc.setSize(350,300);    
+    PizzaCalc.setVisible(true);       
 }    
 } 

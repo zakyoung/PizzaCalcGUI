@@ -8,15 +8,16 @@ import javax.swing.JTextField;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-public class MyGridLayout extends JFrame{
+public class PizzaGUI extends JFrame{
+  private JLabel label;
   private JPanel line2;
   private JLabel finalLabel; 
   private JLabel labelLine2;
   private String textFieldText;
   private JTextField field1;
-  public MyGridLayout(){    
+  public PizzaGUI(){    
     super("Pizza Servings Calculator");    
-    JLabel label = new JLabel("Pizza Servings Calculator",JLabel.CENTER);
+    label = new JLabel("Pizza Servings Calculator",JLabel.CENTER);
     label.setFont(new Font("Times New Roman", Font.BOLD, 18));
     label.setForeground(Color.red);
     super.add(label);
@@ -46,6 +47,6 @@ private class ButtonHandler implements ActionListener{
   }
 }
 public static void main(String[] args) {    
-    new MyGridLayout();    
+    new PizzaGUI();    
 }    
 } 

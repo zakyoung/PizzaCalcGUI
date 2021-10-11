@@ -13,7 +13,7 @@ public class MyGridLayout{
   private JLabel finalLabel; 
   private JLabel labelLine2;
   private String textFieldText;
-  JTextField field1;
+  private JTextField field1;
   public MyGridLayout(){    
     JFrame frame = new JFrame("Pizza Servings Calculator");    
     JLabel label = new JLabel("Pizza Servings Calculator",JLabel.CENTER);
@@ -27,8 +27,6 @@ public class MyGridLayout{
     frame.add(line2);
     line2.add(labelLine2);
     line2.add(field1);
-    TextFieldHandler tHandler = new TextFieldHandler();
-    field1.addActionListener(tHandler);
     JButton ButtonLn3 = new JButton("Calculate Servings");  
     frame.add(ButtonLn3);
     finalLabel = new JLabel("",JLabel.CENTER);
@@ -42,15 +40,9 @@ public class MyGridLayout{
 private class ButtonHandler implements ActionListener{
   @Override
   public void actionPerformed(ActionEvent event){
-    double inches = Double.parseDouble(textFieldText);
+    double inches = Double.parseDouble(field1.getText());
     double Servings = Math.pow((inches / 8),2);
     finalLabel.setText(String.format("A %.0f inch pizza will serve %.2f people", inches, Servings));
-  }
-}
-private class TextFieldHandler implements ActionListener{
-  @Override
-  public void actionPerformed(ActionEvent event){
-      textFieldText  = event.getActionCommand();
   }
 }
 public static void main(String[] args) {    

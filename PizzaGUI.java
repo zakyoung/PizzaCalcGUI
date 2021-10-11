@@ -34,8 +34,9 @@ public class PizzaGUI extends JFrame{
     ButtonHandler handler = new ButtonHandler();
     ButtonLn3.addActionListener(handler);
     super.add(finalLabel); 
-    super.setLayout(new GridLayout(4,1,5,5));    
+    super.setLayout(new GridLayout(4,1));    
 }
+
 private class ButtonHandler implements ActionListener{
   @Override
   public void actionPerformed(ActionEvent event){
@@ -44,6 +45,7 @@ private class ButtonHandler implements ActionListener{
     finalLabel.setText(String.format("A %.0f inch pizza will serve %.2f people.", inches, Servings));
   }
 }
+
 public static void main(String[] args) {    
     PizzaGUI PizzaCalc = new PizzaGUI();
     PizzaCalc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
